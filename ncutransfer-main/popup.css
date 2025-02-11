@@ -1,0 +1,91 @@
+/* CSS used in popup.html */
+h4
+{
+    gap:8px;
+}
+h5
+{
+    margin:5px 0px 15px 0px;
+}
+.modal-title
+{
+    font-size:x-large;
+    font-weight:bolder;
+    margin-left:45%;
+}
+.stay-login
+{
+    margin-left:40%;
+    margin-bottom:10px;
+    padding-top:10px;
+}
+#stayLogin
+{
+    outline:1px #a6a6a6 solid;
+}
+.popup-text-p
+{
+    height:28px;
+}
+.popup-text-field
+{
+    margin:2px 0px 2px 0px;
+    border:1px #a6a6a6 solid;
+}
+.vl 
+{
+    border-left:1px solid black;
+    height:24px;
+    margin:0px 5px 0px 2px;
+}
+.popup-btn
+{
+    background-color:#fccdaf;
+    border-color:#a6a6a6;
+    width:20%;
+    font-size:large;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.popup-btn:hover, .popup-btn:active, .popup-btn:focus
+{
+    background-color:#d38b8c;
+    text-decoration:none;
+    outline:none;
+    color:black;
+}
+.togglePassword1
+{
+    position:relative;
+    bottom:36px;
+    left:90%;
+    color:#a6a6a6;
+    cursor:pointer;
+}
+.togglePassword2
+{
+    position:relative;
+    bottom:36px;
+    left:90%;
+    color:#a6a6a6;
+    cursor:pointer;
+}
+#studentEmail1, #studentEmail2, #showLoggedInId, #idToResetPwd
+{
+    color:blue;
+}
+i /* This is the style for fontawesome icons. Please override this code in your html/css file if you want a different color. */
+{
+    color:white;
+}
+#loginSuccessPopupLabel, #registerEmailPopupLabel, #finishRegisterPopupLabel, #forgotPwdPopupLabel, #confirmPwdPopupLabel, #resetPwdPopupLabel, #finishResetPwdPopupLabel
+{
+    position:relative;
+    right:20px;
+}
+#loginErrorMsg, #forgotPwdErrorMsg, .registerErrorMsg, #confirmPwdErrorMsg, .resetPwdErrorMsg
+{
+    color:red;
+    font-size:12px;
+    margin-left:5px;
+}

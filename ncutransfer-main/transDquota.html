@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+    <!-- Sophomore Spring Semester Web Programming Project -->
+    <meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+    <title>轉系相關-各系所招收名額</title>
+    <!-- Additional libraries and frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1891b13e2b.js" crossorigin="anonymous"></script>
+	<script src="checkRedirect.js"></script>
+
+    
+    <style>
+        main
+        {
+            background-color:white;
+        }
+        .transfer-header
+        {
+            height:55px;
+            padding-left:20px;
+            padding-top:10px;
+            background-color:#dbcccc;
+        }
+        .transfer-header-link, .transfer-header-link:hover, .transfer-header-link:focus, .transfer-header-link:active
+        {
+            color:black;
+        }
+        .transfer-title
+        {
+            margin:40px 0px 20px 0px;
+        }
+        .transfer-row
+        {
+            margin:30px 0px 60px 0px;
+        }
+        .credit-btn, .credit-btn:hover, .credit-btn:focus, .credit-btn:active
+        {
+            position:relative;
+            background-color:#f6e8e8;
+            width:30%;
+            margin:10px 0px 20px 0px;
+            padding:10px;
+            font-size:28px;
+            color:black;
+        }
+        .credit-info-container
+        {
+            margin:20px 0px 30px 100px;
+        }
+        .credit-info-title
+        {
+            color:#722a1d;
+            font-weight:bold;
+        }
+        .table
+        {
+            width:80%;
+        }
+        .table>thead>tr>th
+        {
+            background-color:#f6e8e8;
+        }
+        .table>tbody>tr>td
+        {
+            background-color:#dbcccc;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+       
+        caption
+        {
+            caption-side:bottom;
+            margin-left:10px;
+        }
+        .credit-link, .credit-link:hover, .credit-link:focus, .credit-link:active
+        {
+            color:black;
+        }
+        .top-arrow-btn-container
+        {
+            position:fixed;
+            background-color:#722a1d;
+            padding:15px 15px 15px 15px;
+            border-radius:40px;
+            top:530px;
+            right:80px;
+        }
+        .top-arrow-btn, .top-arrow-btn:hover, .top-arrow-btn:focus, .top-arrow-btn:active
+        {
+            background-color:#722a1d;
+        }
+        i
+        {
+            color:white;
+        }
+    </style>
+    <script>
+        jQuery(function($) {
+        $('a[href$=".pdf"]').attr("download","");
+        });
+    </script>
+</head>
+<body>
+         <!--navbar start-->
+   <div id="nav"></div>
+   <script>
+   $(document).ready(function(){
+     $("#nav").load("navbar.html", function(){
+         // Code executed after content is loaded
+         checkRedirect(); // Refer to checkRedirect.js
+     });
+     $('#triggerLoginPopup').click(function(){
+         $('#loginPopup').modal('toggle');
+         $('#loginErrorMsg').html(' ');
+     });});
+   </script>
+<!--the end of navbar-->
+<main>
+    <div class="container">
+	    <br>
+    <h2 align="center">各系所招收名額</h2><br>
+
+
+    
+            <h3 id="info1" class="credit-info-title">申請期限</h3>
+            &emsp;&emsp;自 113 年 5 月 1 日（週三）上午 8 時 30 分起至 5 月 14 日（週二）下午 5 時止，
+            向註冊組提出申請，逾期不予受理。 
+            <h3 id="info1" class="credit-info-title"><br>辦理方式</h3>
+            <ol style="font-size: 14px;">
+                <li>轉系、所、組、學程限申請一系、所、組、學程，違反者取消申請資格；已錄取者取消錄取資格。經核准轉系、所、組、學程學生，不得申請變更或撤銷。</li>
+                <li>填具經家長或監護人簽章認可之轉系所申請表一份（表格請向註冊組洽取，亦可直接至教務處網站中下載），並檢附成績單及轉系所申請表自行送交轉入、轉出系所核章後，於申請期限內繳回註冊組(系所規定文件請送轉入系所)</li>
+            </ol><br>
+        
+        
+        <table class="table table-striped table-response-lg col-6 mx-auto text-center">
+                
+            <thead>
+                <tr>
+                    <th class="text-center">學系名稱</th>
+                    <th class="text-center">二年級預計招收名額</th>
+                    <th class="text-center">三年級預計招收名額</th>
+                    <th class="text-center">四年級預計招收名額</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>中國文學系</td>
+                    <td class="text-center">4</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>英美語文學系</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>法國語文學系</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>文學院學士班</td>
+                    <td class="text-center">4</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>數學系(數學科學組)</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>數學系(計算與資料科學組)</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>物理學系</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>化學學系</td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>光電科學與工程學系</td>
+                    <td class="text-center">9</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">1</td>
+                </tr>
+                <tr>
+                    <td>理學院學士班</td>
+                    <td class="text-center">4</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>化學工程與材料工程學系</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>土木工程學系</td>
+                    <td class="text-center">10</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">5</td>
+                </tr>
+                <tr>
+                    <td>機械工程學系(光機電工程組)</td>
+                    <td class="text-center">9</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>機械工程學系(先進材料與精密製造組)</td>
+                    <td class="text-center">9</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>機械工程學系(設計與分析組)</td>
+                    <td class="text-center">9</td>
+                    <td class="text-center">8</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>工學院學士班</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>企業管理學系</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>資訊管理學系</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>經濟學系</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">1</td>
+                </tr>
+                <tr>
+                    <td>財務金融學系</td>
+                    <td class="text-center">8</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>電機工程學系</td>
+                    <td class="text-center">19</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>資訊工程學系</td>
+                    <td class="text-center">10</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>通訊工程學系</td>
+                    <td class="text-center">8</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>資訊電機學院學士班</td>
+                    <td class="text-center">1</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>大氣科學學系</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">2</td>
+                    <td class="text-center">3</td>
+                </tr>
+                <tr>
+                    <td>地球科學學系</td>
+                    <td class="text-center">11</td>
+                    <td class="text-center">11</td>
+                    <td class="text-center">9</td>
+                </tr>
+                <tr>
+                    <td>地球科學學院學士班</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>太空科學與工程學系</td>
+                    <td class="text-center">6</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">1</td>
+                </tr>
+                <tr>
+                    <td>客家語文暨社會科學學系</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">8</td>
+                </tr>
+                <tr>
+                    <td>客家語文暨社會科學學系(客家社會及政策組)</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">4</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>客家語文暨社會科學學系(客家語文及傳播組)</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">3</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>生命科學系</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+                <tr>
+                    <td>生醫科學與工程學系</td>
+                    <td class="text-center">7</td>
+                    <td class="text-center">0</td>
+                    <td class="text-center">0</td>
+                </tr>
+            </tbody>
+            <caption>※預計招收名額為 0 者，係指該學系該年級 113 學年度不受理轉系申請。<br>
+                ※申請學生之成績未達各系審查錄取標準時，得不足額錄取。<br>
+                ※研究生申請轉系所之名額及審查標準均依照各系所之規定辦理。<br> </caption>
+        </table>
+        
+            <h3 id="info2" class="credit-info-title">注意事項</h3>
+            <ul style="font-size: 14px;">
+                <li>放榜日期: 113 年 8 月 5 日（週一）。</li>
+                <li>學生須依據本校轉系所辦法之規定並符合轉入學系所之審查標準，方得申
+                    請轉系所。相關規定請至教務處網頁查詢，亦可直接洽詢各系所或註冊組。</li>
+            </ul><br>
+        <br>
+            <h3 id="info4" class="credit-info-title">相關表單暨作業日程表</h3>
+        <ul>
+            <li>
+                <a href="https://drive.google.com/uc?export=download&id=1vWRWzmSTBVaEAexiVxzxOTVX__KFu1dY" download="text.pdf" style="color: black; font-size: 16px;">轉系(所)申請表  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg></a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/uc?export=download&id=1CB_BB5vyBKf7JBer4erGG1wpgRzu1nPq" download="text.pdf" style="color: black; font-size: 16px;">轉系所招生作業日程表  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg></a>
+            </li>
+        </ul>
+    <br>
+        
+        
+        
+       </div> 
+    </main>
+</body>
+</html>

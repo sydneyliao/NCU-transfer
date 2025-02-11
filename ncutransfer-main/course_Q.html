@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+	<!-- Sophomore Spring Semester Web Programming Project -->
+    <!-- The html Nicole Q uses to test registration, login, etc. -->
+	<meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+	<title>課程專區</title>
+    <!-- Additional libraries and frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- External files -->
+    <script src="checkRedirect.js"></script><!-- Check redirect source -->
+    <style>
+        main
+        {
+            background-color:white;
+        }
+        .course-header
+        {
+            height:55px;
+            padding-left:20px;
+            padding-top:10px;
+            background-color:#dbcccc;
+        }
+        .course-header-text
+        {
+            color:black;
+        }
+        .course-row
+        {
+            margin-top:20px;
+        }
+        .table
+        {
+            width:70%;
+        }
+        .form-check-label
+        {
+            text-align:center;
+        }
+        caption
+        {
+            caption-side:bottom;
+            margin-left:40px;
+        }
+    </style>
+    <script>
+        var listOfMISCoreCourses = ["會計學", "經濟學", "統計學", "企業概論", "微積分",
+        "計算機概論Ⅰ", "資訊管理導論", "程式設計", "作業系統", "資料與檔案結構", "資料庫管理",
+        "企業資料通訊", "行銷學", "系統分析與設計", "作業研究Ⅰ", "組織行為", "人工智慧與機器學習",
+        "演算法", "電子商務", "資訊系統發展專題", "管理資訊系統"];
+        var listOfMISMustSelectCourses = ["初階程式設計", "網頁程式設計"];
+        var coreCoursesCount = listOfMISCoreCourses.length;
+        var courseNo = 0;
+
+        $(document).ready(function(){
+            $("#nav").load("navbar.html", function(){
+                // Code executed after content is loaded
+                checkRedirect(); // Refer to checkRedirect.js
+            });
+            $('#triggerLoginPopup').click(function(){
+                $('#loginPopup').modal('toggle');
+                $('#loginErrorMsg').html(' ');
+            });
+            $("#hidden").hide();
+            $("#show").click(function(){
+                $("#hidden").show();
+                for (i in listOfMISCoreCourses){ //必修 courses
+                    $('#course' + courseNo).html(listOfMISCoreCourses[i]);
+                    courseNo++;
+                }
+                for (i in listOfMISMustSelectCourses){ //Make 必選 courses gray
+                    $('#course' + courseNo).html(listOfMISMustSelectCourses[i]);
+                    $('#course' + courseNo).addClass("text-secondary");
+                    courseNo++;
+                }
+                for (i = 0; i < 24 - courseNo; i++){ //Delete unnecessary checkboxes
+                    $('#course' + courseNo).remove();
+                    $('#c' + courseNo).remove();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--navbar start-->
+<div id="nav"></div>
+<!--the end of navbar-->
+<main class="container-fluid">
+    <div class="row course-header">
+        <h3 class="course-header-text">課程專區--快來看看還少哪些課吧！</h3>
+    </div>
+    <section><!-- Shown as soon as the page is loaded -->
+        <div class="row text-center course-row">
+            <h4>請點選系所查詢必修課程</h4>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <table class="table table-striped table-bordered table-response-lg col-6 text-center course-row">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">文學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">中國文學系</a>
+                                    <a href="#" class="dropdown-item">英美語文學系</a>
+                                    <a href="#" class="dropdown-item">法國語文學系</a>
+                                    <a href="#" class="dropdown-item">文學院學士班</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">理學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">數學系</a>
+                                    <a href="#" class="dropdown-item">物理學系</a>
+                                    <a href="#" class="dropdown-item">化學學系</a>
+                                    <a href="#" class="dropdown-item">光電科學與工程學系</a>
+                                    <a href="#" class="dropdown-item">理學院學士班</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">工學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">土木工程學系</a>
+                                    <a href="#" class="dropdown-item">機械工程學系</a>
+                                    <a href="#" class="dropdown-item">化學工程與材料工程學系</a>
+                                    <a href="#" class="dropdown-item">工學院學士班</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">管理學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">企業管理學系</a>
+                                    <a href="#" id="show" class="dropdown-item">資訊管理學系</a><!-- Click on the link to make the following table of missing courses appear -->
+                                    <a href="#" class="dropdown-item">財務金融學系</a>
+                                    <a href="#" class="dropdown-item">經濟學系</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">資電學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">電機工程學系</a>
+                                    <a href="#" class="dropdown-item">資訊工程學系</a>
+                                    <a href="#" class="dropdown-item">通訊工程學系</a>
+                                    <a href="#" class="dropdown-item">資訊電機學院學士班</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">地科學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">大氣科學學系</a>
+                                    <a href="#" class="dropdown-item">地球科學學系</a>
+                                    <a href="#" class="dropdown-item">地球科學學院學士班</a>
+                                    <a href="#" class="dropdown-item">太空科學與工程學系</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">客家學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">客家語文暨社會科學學系</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dropdown dropend">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">生醫理工學院</button>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">生命科學系</a>
+                                    <a href="#" class="dropdown-item">生醫科學與工程學系</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>                
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="hidden"><!-- Hidden on start, shown after the user chooses a department (as of now, must be MIS) -->
+        <div class="row text-center course-row">
+            <h4>請勾選已修畢之課程</h4>
+        </div>
+        <form class="form" method="post" action="courseInfo.php">
+            <div class="row">
+                <div class="col-2"></div>
+                <table class="table table-striped table-bordered table-response-lg col-6 text-center course-row">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course0" for="c0"></label>
+                                    <input type="checkbox" class="form-check-input" id="c0">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course1" for="c1"></label>
+                                    <input type="checkbox" class="form-check-input" id="c1">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course2" for="c2"></label>
+                                    <input type="checkbox" class="form-check-input" id="c2">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course3" for="c3"></label>
+                                    <input type="checkbox" class="form-check-input" id="c3">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course4" for="c4"></label>
+                                    <input type="checkbox" class="form-check-input" id="c4">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course5" for="c5"></label>
+                                    <input type="checkbox" class="form-check-input" id="c5">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course6" for="c6"></label>
+                                    <input type="checkbox" class="form-check-input" id="c6">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course7" for="c7"></label>
+                                    <input type="checkbox" class="form-check-input" id="c7">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course8" for="c8"></label>
+                                    <input type="checkbox" class="form-check-input" id="c8">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course9" for="c9"></label>
+                                    <input type="checkbox" class="form-check-input" id="c9">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course10" for="c10"></label>
+                                    <input type="checkbox" class="form-check-input" id="c10">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course11" for="c11"></label>
+                                    <input type="checkbox" class="form-check-input" id="c11">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course12" for="c12"></label>
+                                    <input type="checkbox" class="form-check-input" id="c12">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course13" for="c13"></label>
+                                    <input type="checkbox" class="form-check-input" id="c13">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course14" for="c14"></label>
+                                    <input type="checkbox" class="form-check-input" id="c14">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course15" for="c15"></label>
+                                    <input type="checkbox" class="form-check-input" id="c15">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course16" for="c16"></label>
+                                    <input type="checkbox" class="form-check-input" id="c16">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course17" for="c17"></label>
+                                    <input type="checkbox" class="form-check-input" id="c17">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course18" for="c18"></label>
+                                    <input type="checkbox" class="form-check-input" id="c18">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course19" for="c19"></label>
+                                    <input type="checkbox" class="form-check-input" id="c19">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course20" for="c20"></label>
+                                    <input type="checkbox" class="form-check-input" id="c20">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course21" for="c21"></label>
+                                    <input type="checkbox" class="form-check-input" id="c21">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course22" for="c22"></label>
+                                    <input type="checkbox" class="form-check-input" id="c22">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-check">
+                                    <label class="form-check-label" id="course23" for="c23"></label>
+                                    <input type="checkbox" class="form-check-input" id="c23">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <caption>
+                        <h5 class="text-secondary">灰字為必選課程</h5>
+                        <a href="https://im.mgt.ncu.edu.tw/download/course/waivers/%E7%AE%A1%E9%99%A2%E5%90%84%E7%B3%BB%E8%AA%B2%E7%A8%8B%E6%8A%B5%E5%85%8D%E5%B0%8D%E7%85%A7%E8%A1%A8_v20230511.pdf" target="_blank" rel="noopener noreferrer">課程抵免對照表點此</a>
+                    </caption>
+                </table>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <button type="login" class="btn pink-btn shadow-none">確認</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link rel="stylesheet" href="fullpage2222.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <meta charset='utf-8' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css' rel='stylesheet'
+        media='print' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include SweetAlert2 library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .section {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        #calendar .fc-widget-header .fc-widget-header:first-child {
+            background-color: #722a1d !important;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #calendar .fc-widget-header .fc-widget-header:first-child .fc-day-number {
+            color: white !important;
+        }
+
+        #calendar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50; /* 調整高度 */
+            margin-top: -100px; /* 上移兩列的高度 */
+        }
+
+        #calendar {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* 新增標題樣式 */
+        .event-title {
+            font-size: 30px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .fc-event {
+            background-color: white !important;
+            border-color: white;
+            text-align: center;
+        }
+
+        /* 設定行事曆背景顏色 */
+        .fc-bg {
+            background-color: #f6e8e8 !important;
+        }
+
+        .fc-today-button,
+        .fc-prev-button,
+        .fc-next-button {
+            background-color: #f6e8e8 !important;
+            color: black !important;
+        }
+        .section {
+            position: relative;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        img {
+            top:70%;
+            max-width: 100%;
+            max-height: 100%;
+            animation: fadeIn 0.5s ease; /* 使用 fadeIn 動畫 */
+        }
+        .text {
+            font-size: 50px;
+            position: absolute;
+            left: 0;
+            top: 53%;
+            margin: 0;
+            padding: 0;
+            animation: moveText 3s ease forwards; /* 5秒钟完成移动，你可以调整持续时间 */
+        }
+
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+        }
+        @keyframes moveText {
+        100% {
+        left: 50%; /* 移动到左边的50%位置 */
+        transform: translateX(-50%); /* 将文字居中 */
+        }
+        }
+    </style>
+</head>
+
+<body>
+      <!--navbar start-->
+      <div id="nav"></div>
+      <script>
+        $(function(){
+        $("#nav").load("navbar.html");
+        });
+      </script>
+      <!--the end of navbar-->
+
+    <div class="container">
+    <div id="fullpage">
+        <div class="section" id="section1">
+            <img src="img/homepage.png" alt="圖片描述">
+            <p class="text">中大轉學轉系知訊網</p>
+        </div>
+        <div class="section" id="section2">
+            <div id='calendar-container'>
+                <div id='calendar'></div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $('#calendar').fullCalendar({
+                        dayClick: function (date, jsEvent, view) {
+                            if (date.format('YYYY-MM-DD') === '2024-05-24') {
+                                // Show custom message when clicking on May 24, 2024
+                                Swal.fire({
+                                    title: '下學期課程初選',
+                                    text: '24日～31日',
+                                    icon: 'info',
+                                    confirmButtonText: 'OK'
+                                });
+                            } else if (date.format('YYYY-MM-DD') === '2024-05-01') {
+                                // Show custom message when clicking on May 1, 2024
+                                Swal.fire({
+                                    title: '轉系、所申請開始',
+                                    text: '1日～14日',
+                                    icon: 'info',
+                                    confirmButtonText: 'OK'
+                                });
+                            } else {
+                                // Handle other days click events here
+                                $('#eventFormOkButton').data('key', date.id);
+                                $('#eventFormDelButton').data('key', date.id);
+                                $('#dateInput').val(date.format('YYYY-MM-DD'));
+                                $('#eventInput').val(date.spendEvent);
+                                $('#eventItemInput').val(date.eventItem).trigger('change');
+                                $('#contentInput').val(date.content);
+                                $('#eventFormModalTitle').text('編輯事件');
+                                $('#eventFormDelButton').show();
+                                $('#eventFormModal').modal('show');
+                            }
+                        },
+                        dayRender: function (date, cell) {
+                            if (date.format('YYYY-MM-DD') === '2024-05-24') {
+                                // Change the title to indicate an event on May 24, 2024
+                                cell.append('<div class="event-title">🏫</div>');
+                            } else if (date.format('YYYY-MM-DD') === '2024-05-01') {
+                                // Change the title to indicate an event on May 1, 2024
+                                cell.append('<div class="event-title">🏫</div>');
+                            }
+                        }
+                    });
+
+                    // Add event for May 24, 2024
+                    $('#calendar').fullCalendar('addEvent', {
+                        title: '🏫',
+                        start: '2024-05-24'
+                    });
+
+                    // Add event for May 1, 2024
+                    $('#calendar').fullCalendar('addEvent', {
+                        title: '🏫',
+                        start: '2024-05-01'
+                    });
+                });
+            </script>
+
+            <div class="modal fade" id="eventFormModal" tabindex="-1" role="dialog" aria-labelledby="eventFormModal"
+                data-backdrop="static">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="eventFormModalTitle"></h4>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p>
+
+     </p>   
+
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+
+    <script>
+        new fullpage('#fullpage', {
+            // Options here
+        });
+        function moveToSection2() {
+        // fullPage.js API: 手动滚动到指定部分
+        fullpage_api.moveTo(2); // 移动到第二部分
+        }
+
+        // 在文字动画完成后调用 moveToSection2 函数
+        const text = document.querySelector('.text');
+        text.addEventListener('animationend', moveToSection2);
+    </script>
+</body>
+
+</html>

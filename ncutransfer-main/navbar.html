@@ -1,0 +1,328 @@
+<!-- This html contains navbar (碩甫's code) as well as popup windows (from popup.html, which is Nicole Q's code). -->
+<style>
+  .navbar-nav li.dropdown:hover > .dropdown-menu {
+  display: block;
+  }
+  .btn{
+  border-radius: 0.7rem;
+  }
+
+  .btn.bg-hover-primary3:hover,
+  .btn.bg-hover-primary3.show {
+      background-color: #ffecdf !important;
+  }
+
+  .btn.bg-hover-primary3:active,
+  .btn.bg-hover-primary3:focus {
+      background-color: #ffecdf !important;
+    border-color: #ffecff;
+  }
+
+  .btn-primary3{
+    background-color: #FDE1CF;
+  }
+</style>
+<nav class="navbar navbar-dark fixed-top navbar-expand-md" style="background-color: #722A1D ;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+        中大轉學轉系知訊網
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">首頁</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="">轉系相關</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="findCourse.html">補課查詢</a></li>
+                    <li><a class="dropdown-item" href="transDstd.html">轉系審查標準</a></li>
+                    <li><a class="dropdown-item" href="transDquota.html">各系所招收名額</a></li>
+                    <li><a class="dropdown-item" href="transDq&a.html">常見問題</a></li>
+                  </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="">轉學相關</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="transCreditsnew.html">學分抵免</a></li>
+                    <li><a class="dropdown-item" href="transRegister.html">報到注意事項</a></li>
+                    <li><a class="dropdown-item" href="transEnroll.html">註冊</a></li>
+                    <li><a class="dropdown-item" href="dormitory.html">住宿</a></li>
+                    <li><a class="dropdown-item" href="transQ&Anew.html">常見問題</a></li>
+                  </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">論壇</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="homePageDcard.php">綜合</a></li>
+                    <li><a class="dropdown-item" href="transferS.php">轉學看板</a></li>
+                    <li><a class="dropdown-item" href="transferD.php">轉系看板</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="link.html">常用連結</a>
+              </li>
+            </ul>
+            <div id="load" class="me-3">
+                <!--由javascript插入-->
+            </div>
+          </div>
+    </div>
+</nav>
+<div class="navbar-placeholder" style="height: 58px;"></div> 
+<script src="navbar.js"></script>
+
+<!-- CSS and JavaScript code for popup.html -->
+<link href="popup.css" rel="stylesheet">
+<script src="popup.js"></script>
+<script src="https://kit.fontawesome.com/1891b13e2b.js" crossorigin="anonymous"></script>
+<!-- Login Popup Window (Bootstrap Modal, the same goes to the other popup windows) -->
+<div class="modal fade container-fluid" tabindex="-1" id="loginPopup" aria-labelledby="loginPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="loginPopupLabel">登入</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-dark text-center">輸入您的學號和密碼來登入會員</h5>
+                <form class="form" method="post" action="login.php" onsubmit="return submitRedirectUrlUponLogin()">
+                    <input type="hidden" id="redirectUrl1" name="redirectUrl" value="">
+                    <p class="popup-text-p">
+                        <input type="text" class="form-control popup-text-field" name="loginId" placeholder="請輸入您的學號" required aria-required="true">
+                    </p>
+                    <p class="popup-text-p">
+                        <input type="password" class="form-control popup-text-field" name="loginPwd" placeholder="請輸入您的密碼" required aria-required="true">
+                    </p>
+                    <span class="errorMsg" id="loginErrorMsg"></span>
+                    <div class="form-check stay-login">
+                        <label class="form-check-label" for="stayLogin">保持登入</label>
+                        <input type="checkbox" class="form-check-input" id="stayLogin" name="stayLogin">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn popup-btn shadow-none">登入</button>
+                    </div>
+                </form>
+                <p class="text-center">
+                    <a href="#" id="forgotPwdLink">忘記密碼?</a>
+                    <span class="vl"></span>
+                    <a href="#" id="registerLink">點我註冊</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Success Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="loginSuccessPopup" aria-labelledby="loginSuccessPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="loginSuccessPopupLabel">登入成功</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <h4 id="loginSuccessMsg" class="text-dark text-center">
+                        登入成功!<br><br>
+                        若要設定帳號資訊及登出<br><br>
+                        請點選右上角的<span id="showLoggedInId"></span>按鈕
+                    </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="registerPopup" aria-labelledby="registerPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="registerPopupLabel">註冊</h3>
+                <button id="closeRegisterPopup" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-dark text-center">輸入您的學號和密碼來註冊會員</h5>
+                <form class="form" method="post" action="register.php" onsubmit="return validateRegisterForm()">
+                    <input type="hidden" id="redirectUrl2" name="redirectUrl" value="">
+                    <p class="form-group popup-text-p">
+                        <input type="text" class="form-control popup-text-field" id="registerId" name="registerId" placeholder="請輸入您的學號" required aria-required="true">
+                    </p>
+                    <span class="errorMsg registerErrorMsg" id="registerErrorMsg1"></span>
+                    <p class="form-group popup-text-p">
+                        <input type="password" class="form-control pwd1 popup-text-field" id="newPwd" name="newPwd" placeholder="請輸入您的密碼 (6~12字元)" required aria-required="true">
+                        <i class="far fa-lg fa-eye togglePassword1"></i>
+                    </p>
+                    <span class="errorMsg registerErrorMsg" id="registerErrorMsg2"></span>
+                    <p class="form-group popup-text-p">
+                        <input type="password" class="form-control popup-text-field pwd2" id="confirmPwd" name="confirmPwd" placeholder="再次輸入密碼 (6~12字元)" required aria-required="true">
+                        <i class="far fa-lg fa-eye togglePassword2"></i>
+                    </p>
+                    <span class="errorMsg registerErrorMsg" id="registerErrorMsg3"></span>
+                    <div class="text-center">
+                        <button type="submit" class="btn popup-btn shadow-none">註冊</button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Email Verification Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="registerEmailPopup" aria-labelledby="registerEmailPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="registerEmailPopupLabel">驗證信箱</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> 
+                <p>
+                    <h4 class="text-dark text-center">
+                        我們已經寄一封電子郵件到<br>
+                        <span id="studentEmail1"></span><br>
+                        請點選電子郵件中的連結登入
+                    </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Finishing Registration Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="finishRegisterPopup" aria-labelledby="finishRegisterPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="finishRegisterPopupLabel">註冊成功</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <h4 id="finishRegisterMsg" class="text-dark text-center">
+                        註冊成功!<br><br>
+                        請點選右上角的登入按鈕登入
+                    </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Forgot Password Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="forgotPwdPopup" aria-labelledby="forgotPwdPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="forgotPwdPopupLabel">忘記密碼</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="forgotPwdForm">
+                    <h5 class="text-dark text-center">輸入您的學號</h5>
+                    <form class="form" method="post" action="forgotPwd.php" onsubmit="return validateStudentId()">
+                        <input type="hidden" id="redirectUrl3" name="redirectUrl" value="">
+                        <p class="form-group popup-text-p">
+                            <input type="text" class="form-control popup-text-field" id="forgotId" name="forgotId" placeholder="請輸入您的學號" required aria-required="true">
+                        </p>
+                        <span class="errorMsg" id="forgotPwdErrorMsg"></span>
+                        <div class="text-center">
+                            <button type="submit" class="btn popup-btn shadow-none">確定</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="forgotPwdSent">
+                    <p>
+                        <h4 id="forgotPwdPopupMsg1" class="text-dark text-center">
+                            我們已經寄一封電子郵件到<br>
+                            <span id="studentEmail2"></span><br>
+                            請點選電子郵件中的連結來重設密碼
+                        </h4>
+                        <h4 id="forgotPwdPopupMsg2" class="text-dark text-center"></h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Confirm Password (Before Reset) Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="confirmPwdPopup" aria-labelledby="confirmPwdPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="confirmPwdPopupLabel">確認密碼</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="confirmPwdForm">
+                    <h5 class="text-dark text-center">輸入您現在的密碼</h5>
+                    <form class="form" method="post" action="confirmPwd.php" onsubmit="return submitRedirectUrlUponConfirmPwd()">
+                        <input type="hidden" id="redirectUrl4" name="redirectUrl" value="">
+                        <input type="hidden" id="confirmId" name="confirmId" value="">
+                        <p class="form-group popup-text-p">
+                            <input type="password" class="form-control popup-text-field" id="confirmPwdToReset" name="confirmPwdToReset" placeholder="請輸入您現在的密碼" required aria-required="true">
+                        </p>
+                        <span class="errorMsg" id="confirmPwdErrorMsg"></span>
+                        <div class="text-center">
+                            <button type="submit" class="btn popup-btn shadow-none">確定</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reset Password Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="resetPwdPopup" aria-labelledby="resetPwdPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-left" id="resetPwdPopupLabel">重設密碼</h3>
+                <button type="button disabled" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-dark text-center">請重新輸入您的密碼</h5>
+                <h5 class="text-dark text-center">學號: <span id="idToResetPwd"></span></h5>
+                <form class="form" method="post" action="updatePwd.php" onsubmit="return validateResetPwd()">
+                    <input type="hidden" id="redirectUrl5" name="redirectUrl" value="">
+                    <input type="hidden" id="resetId" name="resetId" value="">
+                    <p class="form-group popup-text-p">
+                        <input type="password" class="form-control pwd1 popup-text-field" id="newResetPwd" name="newResetPwd" placeholder="請輸入您的密碼 (6~12字元)" required aria-required="true">
+                        <i class="far fa-lg fa-eye togglePassword1"></i>
+                    </p>
+                    <span class="errorMsg resetPwdErrorMsg" id="resetPwdErrorMsg1"></span>
+                    <p class="form-group popup-text-p">
+                        <input type="password" class="form-control popup-text-field pwd2" id="confirmResetPwd" name="confirmResetPwd" placeholder="再次輸入密碼 (6~12字元)" required aria-required="true">
+                        <i class="far fa-lg fa-eye togglePassword2"></i>
+                    </p>
+                    <span class="errorMsg resetPwdErrorMsg" id="resetPwdErrorMsg2"></span>
+                    <div class="text-center">
+                        <button type="submit" id="resetSubmit" class="btn popup-btn shadow-none">完成</button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Finishing Reset Password Popup Window -->
+<div class="modal fade container-fluid" tabindex="-1" id="finishResetPwdPopup" aria-labelledby="finishRegisterPopupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="finishResetPwdPopupLabel">重設成功</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <h4 id="finishResetPwdMsg" class="text-dark text-center">
+                        密碼重設成功!<br><br>
+                        請點選右上角的登入按鈕重新登入
+                    </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

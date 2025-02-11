@@ -1,0 +1,855 @@
+
+
+
+
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+    <!-- Sophomore Spring Semester Web Programming Project -->
+    <meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+    <title>轉系相關-轉系審查標準</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<script src="checkRedirect.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            /* Every time the window is scrolled ... */
+            $(window).scroll( function(){
+                /* Check the location of each desired element */
+                $('.hideme').each( function(i){
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    /* If the object is completely visible in the window, fade it in */
+                    if( bottom_of_window > bottom_of_object ){
+                        $(this).animate({'opacity':'1'},500);
+                    }
+                }); 
+            });
+        });
+    </script>
+    
+    <style>
+        
+        /* CSS 樣式 */
+        
+        #container div { 
+            margin:50px; 
+            padding:50px; 
+            background-color:#f6e8e8; 
+            border-radius: 50px; 
+            border: 1px solid black; 
+        }
+
+        .hideme {
+            opacity:0;
+        }
+
+        .credit-info-title
+        {
+            color:#722a1d;
+            font-weight:bold;
+            margin-top: 10px;
+        }
+	    
+	.bi.bi-book 
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-calculator 
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-gear
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-buildings
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-clouds
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-virus
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-cpu
+	{
+    	    color: #722a1d;
+	}
+
+	.bi.bi-people
+	{
+    	    color: #722a1d;
+	}
+
+       
+
+        
+    </style>
+</head>
+<body>
+<!--navbar start-->
+   <div id="nav"></div>
+   <script>
+   $(document).ready(function(){
+     $("#nav").load("navbar.html", function(){
+         // Code executed after content is loaded
+         checkRedirect(); // Refer to checkRedirect.js
+     });
+     $('#triggerLoginPopup').click(function(){
+         $('#loginPopup').modal('toggle');
+         $('#loginErrorMsg').html(' ');
+     });});
+   </script>
+<!--the end of navbar-->
+<div class = "container"><br>
+    <h2 align="center">113 學年度轉系審查標準</h2>
+
+    <main id="container">
+        <div class="row credit-info-container">
+            <h4 class="credit-info-title">
+                <i class="bi bi-book"></i>
+                中國文學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    須修畢上下兩學期大一國文，且成績均達七十分(含)以上。
+                </li>
+                <li>
+                    原系當學期成績不得超過三分之一（含）以上不及格。
+                </li>
+                <li>
+                    在校期間未受兩小過(含)以上之處分。
+                </li>
+            </ol>
+            <br><h5>轉系學生須提交備審資料，經本系審查通過，參加面試。須提交之備審資料如下:</h5>
+            <ol>
+                <li>
+                    自傳暨轉系原因說明一份。
+                </li>
+                <li>
+                    本校國文任課老師推薦信一封。
+                </li>
+                <li>
+                    大學成績單一份。
+                </li>
+                <li>
+                    有助資格審查之作品或資料。
+                </li>
+            </ol>
+        </div>
+        
+        <div class="row credit-info-container">
+            <h4 class="credit-info-title">
+                <i class="bi bi-book"></i>
+                英美語文學系
+            </h4>
+            <br><h5>初審通過者，方能參加英文筆試及口試。須提交之備審資料如下:</h5>
+            <ol>
+                <li>
+                    繳交轉系說明信（說明轉系原因並提供個人專業能力自評）。
+                </li>
+                <li>
+                    繳交成績單一份。
+                </li>
+                <li>
+                    繳交個人英文作品一至二篇。
+                </li>
+                <li>
+                    繳交老師推薦信一至二封。
+                </li>
+            </ol>
+            <br><h5>申請須知:</h5>
+            <ol>
+                <li>
+                    申請者為一年級學生，須檢附大學學科能力測驗及指定科目考試之成績單（未參加學測、指考及統測者免繳）。
+                </li>
+                <li>
+                    申請者為二年級學生，須已修習英文系課程一門以上，且所修成績至少一門以上及格。
+                </li>
+            </ol>
+        </div>
+        
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-book"></i>
+                法國語文學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    須修習大一國文、英文上下學期，且兩科兩學期平均均各達八十分。
+                </li>
+                <li>
+                    達本校語言中心規定之大一英文免修標準，並須繳交相關成績證明。
+                </li>
+                <li>
+                    修習本校語言中心開設之其他外語課程至少兩門，且學期成績須均各達八十分。
+                </li>
+                <li>
+                    轉入三年級學生需至少曾修習 8 學分法文課程。
+                </li>
+            </ol>
+            <br><h5>轉系學生須提交備審資料，經本系審查通過，參加面試。須提交之備審資料如下:</h5>
+            <ol>
+                <li>
+                    有法文學習背景者為優先考慮，須提出法文學習證明文件。
+                </li>
+                <li>
+                    繳交本校及本系轉系申請表各一份。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-book"></i>
+                文學院學士班
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    在校期間未受小過（含）以上之處分。
+                </li>
+                <li>
+                    本班不收三年級轉系生。三年級學生申請轉入二年級者，至少須曾修
+                    習本班當屆「應修科目表」所列之一門課；但共同必修課不計。
+                </li>
+            </ol>
+            <br><h5>轉系學生須提交書面備審資料，經審查通過者，參加面試。保留不經面試逕行錄取之可能性。<br>須提交之備審資料如下:</h5>
+            <ol>
+                <li>
+                    學生自述：重點是陳述自己的學習性向適合本班教育宗旨的理由，並
+                    盡量提供有助審查的佐證資料。若有推薦函，應在自述中列出函件份
+                    數，並介紹推薦人。
+                </li>
+                <li>
+                    推薦函（選備，至多二份）：無固定格式，請推薦人說明自己與學生的
+                    關係，此推薦函的重點是作為學生自述的支持文件。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-calculator"></i>
+                數學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    外系轉入二年級學生須修習微積分上下學期，且所修成績上學期須及格。
+                </li>
+                <li>
+                    外系轉入三年級學生至少須修習微積分上下學期，且所修成績上下學期均須及格。
+                </li>
+            </ol>
+                    ※修習本校語言中心開設之其他外語課程至少兩門，且學期成績須均各達八十分。<br>
+                    ※ 申請轉入或轉組之審查標準由本系審查申請者成績及相關資料，擇優錄取。
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-calculator"></i>
+                物理學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    轉入二年級者，至少須修習普通物理兩學期(或本系大一力學與電磁學)及微積分兩學期，且所修成績均須及格。
+                </li>
+                <li>
+                    轉入三年級者，除前述學科必須及格外，應用數學（或工程數學）、熱物理、量子物理亦須及格。
+                </li>
+            </ol>
+            <br><h5>轉系學生須提交書面備審資料，經審查通過者，參加面試。但本系保留不
+                經面試逕行錄取之可能性。<br>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    歷年成績單。
+                </li>
+                    自傳與申請動機。
+                <li>
+                    普通物理或物理系相關課程任課老師的推薦信至少一封。
+                </li>
+            </ol>
+        </div>
+        
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-calculator"></i>
+                化學學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    轉入二年級者，須修習普通化學、普通化學實驗及微積分至少一學期且三科成績均須及格。
+                </li>
+            </ul>
+        </div>
+        
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-calculator"></i>
+                光電科學與工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    轉入二年級者，須普通物理、微積分至少須修過一學期且成績須達六十分（含）以上（得不含申請當學期成績）。
+                </li>
+                <li>
+                    轉入三年級者，除須滿足前述二年級申請資格外，另必須修過電路學、電子學、電磁學三科之一與工程數學的相當課程至少一學期且成績須達六十分（含）以上（得不含申請當學期成績），否則應申請轉入二年級。
+                </li>
+            </ol>
+            <br><h5>評分標準:</h5>
+            <ol>
+                <li>
+                    各學期之班級名次佔分50％（多於一學期以上，取其平均分數）
+                </li>
+                <li>
+                    審查成績佔分50％，審查成績由各招生委員會按申請者個人資料(含成績單及其他有助審查資料)評分之分數平均之。各委員之審查分數宜介六十分(含)與九十分(含)之間，如有低於六十分或高於九十分者由給分委員特案說明，並經本系招生委員會討論決定該考生分數。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-calculator"></i>
+                理學院學士班
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    必須確定選擇之專長領域(由數學、物理、化學、光電科學與工程、生醫科學與工程及生命科學六類領域中擇二為第一與第二專長領域)且將選定之專長領域名稱填寫於轉系申請表中的組別欄內。
+                </li>
+                <li>
+                    除各專長領域另有修課規定外，其餘者必須修習微積分至少一學期且成績及格，以及修習普通物理、普通化學、普通生物三科擇一至少一學期且成績及格。
+                </li>
+            </ol>
+            <br><h5>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    轉系申請表
+                </li>
+                <li>
+                    上學期成績單
+                </li>
+                <li>
+                    名次證明
+                </li>
+                <li>
+                    本學期修課表
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-gear"></i>
+                化學工程與材料工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    轉入本系二、三年級者，至少須修習普通物理、微積分及普通化學各一學期，且所修成績均須及格。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-gear"></i>
+                土木工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    申請轉入之審查標準由本系招生委員會審查成績及相關資料，擇優錄取。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-gear"></i>
+                機械工程學系
+            </h4>
+            <br><h5>外系申請轉入二年級資格:</h5>
+            <ul>
+                <li>
+                    至少修過一學期普通物理(或等同普通物理課程證明)及微積分，且成績均及格。
+                </li>
+            </ul>
+            <br><h5>外系申請降轉二年級之審查標準:</h5>
+            <ul>
+                <li>
+                    歷學年平均成績(得不含申請當學期成績)在該班排名前百分之五十。
+                </li>
+            </ul>
+            <br><h5>外系申請轉入三年級資格:</h5>
+            <ol>
+                <li>
+                    歷學年平均成績(得不含申請當學期成績)在該班排名前百分之五十。
+                </li>
+                <li>
+                    必須修過熱力學、靜力與材料力學、動力學等三科，且成績均及格。
+                </li>
+            </ol>
+            <br><h5>本系之轉組標準:</h5>
+            大一升大二轉組標準：微積分、普通物理均及格。<br>
+            大二升大三轉組標準：
+            <ol>
+                <li>
+                    光機電工程組:工程數學、電路及電子學均及格。
+                </li>
+                <li>
+                    先進材料與精密製造組:靜力與材料力學、材料科學均及格。
+                </li>
+                <li>
+                    設計與分析組:熱力學、動力學均及格。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-gear"></i>
+                工學院學士班
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    須修習微積分、普通化學、普通物理至少一學期且成績及格。
+                </li>
+                <li>
+                    申請轉入之審查標準由本班招生委員會審查申請者成績及相關資料，擇優錄取。
+                </li>
+                <li>
+                    須確定選定之專長領域，包括智慧機械、能源材料、永續防災、綠色科技領域。
+                </li>
+                <li>
+                    須繳交自傳與讀書計畫(以個人轉系動機、自我修課規劃、未來前程計畫為描述重點，10頁為限)一份。
+                </li>
+            </ol>
+            <br><h5>評分標準:</h5>
+            <ol>
+                <li>
+                    該學年學業之班級名次(佔 40%)：實得分數= 40*(班級人數-名次+1/班級人數)。
+                </li>
+                <li>
+                    審查個人資料(佔 60%)：審查成績由招生委員按申請者資料(成績單、自傳、讀書計畫)評定之分數平均之。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-buildings"></i>
+                企業管理學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    各學期平均成績(得不含申請當學期成績)在原系班上前(含)百分之五十。
+                </li>
+            </ul>
+            <br><h5>本系審查轉系學生，以書面審查及口試結果為錄取標準，書面審查擇優參
+                加口試，兩項成績之比重由系審查委員會決定之。<br>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    成績單
+                </li>
+                <li>
+                    自傳(以個性、轉系動機、自我前程規劃、在校期間獎懲記錄為描述重點)
+                </li>
+                <li>
+                    推薦信二封
+                </li>
+                <li>
+                    轉系後預定選課計劃表一份。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-buildings"></i>
+                資訊管理學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    各學期平均成績(得不含申請當學期成績)在該班排名前(含)百分之七十五。
+                </li>
+            </ul>
+            <br><h5>本系審查轉系學生，以學業成績＋書面審查成績為錄取標準。<br>評分標準:</h5>
+            <ol>
+                <li>
+                    該學年學業之班級名次佔 50％
+                </li>
+                <li>
+                    審查成績佔 50％，審查成績由各招生委員按申請者個人資料（含成績單）評定之分數平均之。
+                </li>
+            </ol>
+            <br><h5>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    成績單
+                </li>
+                <li>
+                    和自傳（以個性、轉系動機、自我前程規劃、在校期間獎懲記錄為描述重點）
+                </li>
+                <li>
+                    一份及導師和目前就讀系之任課教師的推荐信各一封。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-buildings"></i>
+                經濟學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    前一學期的學業平均成績及格。(請檢附歷年成績單)
+                </li>
+                <li>
+                    在校期間未受小過（含）以上之處分者。(請檢附學校獎懲記錄表)
+                </li>
+            </ol>
+            <br><h5>本系審查標準，由系審查委員會以書面審查決定是否錄取。<br>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    自傳（以個性、轉系動機與課外活動表現為描述重點）
+                </li>
+                <li>
+                    其他有利審查資料
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-buildings"></i>
+                財務金融學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    申請轉入本系學生累計平均成績(得不含申請當學期成績)在原系班上前(含)百分之五十。
+                </li>
+            </ul>
+            <br><h5>申請轉入本系者，本系將進行書面資料審查後從優安排複試(口試)。須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    大學歷年成績單
+                </li>
+                <li>
+                    自傳一份(以個性、轉系動機、自我前程規劃、在校期間獎懲記錄為描述重點)
+                </li>
+                <li>
+                    推薦信二封
+                </li>
+                <li>
+                    大二轉系者，請附上大學入學考試成績單(若未參加學測、指考及統測者免繳)。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-cpu"></i>
+                電機工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    轉入二年級者:至少修過一學期普通物理(或等同普通物理課程證明)及微積分，且成績須達六十分以上。<br>
+                    歷學年平均成績(得不含申請當學期成績)在該班排名前百分之五十。
+                </li>
+                <li>
+                    轉入三年級者：除須滿足第二條第一款申請二年級之資格外，另必須修過電子學 I、電路學 I、電磁學 I 等三科，以及工程數學-線性代數、工程數學-微分方程、工程數學-複變等三科任選一科，且成績須達六十分以上，否則必須降轉至二年級。
+                </li>
+                <li>
+                    轉入四年級者：除須滿足第二條第一款申請二年級之資格外，另必須修過電子學 I/II、電路學 I/II、電磁學 I/II 等六科，以及工程數學-線性代數、工程數學-微分方程、工程數學-複變等三科任選二科，且成績需達六十分以上。
+                </li>
+            </ol>
+            <br><h5>評分標準:</h5>
+            <ol>
+                <li>
+                    歷學年學業之班級名次(得不含申請當學期成績)佔六十%。
+                </li>
+                <li>
+                    審查成績佔四十%，審查成績由各招生委員按申請者個人資料(含成績單及其他有助審查資料)評定之分數平均之。各委員之審查分數宜介於六十分與九十分之間，如有低於六十分或高於九十分者由給分委員特案說明，並經本系招生委員會討論決定該考生分數。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-cpu"></i>
+                資訊工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    至少須修習(含當學期)計算機概論及微積分各一學期，且成績均須達 80 分以上。
+                </li>
+            </ul>
+            <br><h5>評分標準:</h5>
+            <ol>
+                <li>
+                    歷年平均成績（得不含申請當學期）之班級名次佔 50%。
+                </li>
+                <li>
+                    審查資料成績佔 50%，由各招生委員的評分平均來決定。
+                </li>
+            </ol>
+            <br><h5>頁數限制十頁以內，須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    成績單
+                </li>
+                <li>
+                    資工相關具體成果(如程式競賽、獎狀、專題、作品等)
+                </li>
+                <li>
+                    英文能力證明
+                </li>
+                <li>
+                    其他有助於審查的資料
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-cpu"></i>
+                通訊工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    轉入二年級：須修習普通物理及微積分各一學期，且成績均須及格。未修習「普通物理」者，申請轉系時一併檢附曾經或正在修習與其課程內容相近或同質性之科目資料。
+                </li>
+                <li>
+                    轉入三年級：除須滿足轉入二年級之資格外，另必須修過工程數學線性代數、工程數學-微分方程、工程數學-複變函數等三科任選二科，且成績須達六十分以上，否則必須降轉至二年級。
+                </li>
+                <li>
+                    轉入四年級：除須滿足轉入二年級之資格外，另必須修過工程數學線性代數、工程數學-微分方程、工程數學-複變函數等三科，訊號與系統、通訊原理 I/II 等三科任選一科，且成績須達六十分以上，否則必須降轉至較低年級。
+                </li>
+            </ol>
+            <br><h5>評分標準:</h5>
+            <ul>
+                <li>
+                    申請前各學期學業累計成績班級名次佔 50％
+                </li>
+                <li>
+                    審查成績佔 50％
+                </li>
+            </ul>
+            <br><h5>須提交之備審資料:</h5>
+            <ul>
+                <li>
+                    須繳交轉系申請說明書電子檔：含轉系動機及其他有利審查資料(例如：曾修習通訊系之系訂必修或＊記號選修課程且及格…)，以利審查。轉系申請說明書須為 A4 版面 10 頁以內。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-cpu"></i>
+                資訊電機學院學士班
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    必須修習微積分至少一學期且成績及格。
+                </li>
+                <li>
+                    申請轉入之審查標準由本班班務委員會審查申請者成績及相關資料，擇優錄取。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-clouds"></i>
+                大氣科學學系
+            </h4>
+            <br><h5>申請轉入二年級資格:</h5>
+            <ol>
+                <li>
+                    須修習普通物理及微積分各兩學期，且所修成績均須及格，並經系招生委員會通過。
+                </li>
+                <li>
+                    未修普通物理、微積分學系學生需提供入學考試數學成績備審，並經系招生委員會通過。
+                </li>
+            </ol>
+            <br><h5>申請轉入三年級資格:</h5>
+            <ul>
+                <li>
+                    除需符合上述規定外，應用數學（或工程數學）亦須及格，並經系招生委員會通過。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-clouds"></i>
+                地球科學學系
+            </h4>
+            <br><h5>申請轉入二年級資格:</h5>
+            <ol>
+                <li>
+                    須修習普通物理及微積分各兩學期，且所修成績均須及格。
+                </li>
+                <li>
+                    未修普通物理、微積分學系學生須提供入學考試數學成績備審。
+                </li>
+            </ol>
+            <br><h5>申請轉入三年級資格:</h5>
+            <ul>
+                <li>
+                    除須符合上述規定外，應用數學(或工程數學)亦須及格。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-clouds"></i>
+                地球科學學院學士班
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    必須修習普通物理及微積分各至少一學期且成績及格。
+                </li>
+                <li>
+                    院內互轉不受前項條件之限制。
+                </li>
+                <li>
+                    未修普通物理、微積分學系學生須提供入學考試數學成績備審。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-clouds"></i>
+                太空科學與工程學系
+            </h4>
+            <br><h5>申請轉入二年級資格:</h5>
+            <ol>
+                <li>
+                    須修習普通物理及微積分各兩學期，且所修成績均須及格，並經系招生委員會通過。
+                </li>
+                <li>
+                    未修普通物理、微積分學系學生須提供入學考試數學成績備審，並經系生委員會通過。
+                </li>
+            </ol>
+            <br><h5>申請轉入三年級資格:</h5>
+            <ul>
+                <li>
+                    除須符合上述規定外，應用數學（或工程數學）亦須及格，並經系招生委員會通過。
+                </li>
+            </ul>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-people"></i>
+                客家語文暨社會科學學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    轉入學生須修習「大一國文」、「大一英文」上下學期，且所修成績無不及格。
+                </li>
+            </ul>
+            <br><h5>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    轉系說明一份(請針對欲轉入之組別說明轉系原因）。
+                </li>
+                <li>
+                    成績單一份。
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-virus"></i>
+                生命科學學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ul>
+                <li>
+                    曾修習本校微積分、普通化學、普通物理、普通生物學(四選一)一學期且成績及格。
+                </li>
+            </ul>
+            <br><h5>轉入二年級學生須符合以下之一標準：</h5>
+            <ol>
+                <li>
+                    一年級須實得至少 32 學分
+                </li>
+                <li>
+                    二年級須實得至少 64 學分
+                </li>
+            </ol>
+        </div>
+
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <i class="bi bi-virus"></i>
+                生醫科學與工程學系
+            </h4>
+            <br><h5>申請資格:</h5>
+            <ol>
+                <li>
+                    申請時前一學期的學業平均成績須及格。
+                </li>
+                <li>
+                    至少須修習微積分、普通化學及普通物理各一學期，且所修成績均須及格。未修上述科目之學系學生，須提供入學考試數學及自然相關科目成績備審，並經系務會議通過。
+                </li>
+                
+            </ol>
+            <br><h5>須提交之備審資料:</h5>
+            <ol>
+                <li>
+                    大學入學考試成績單（若未參加學測、指考及統測者免繳）
+                </li>
+                <li>
+                    歷年成績單
+                </li>
+                <li>
+                    自傳（含轉系動機及意向）
+                </li>
+            </ol>
+        </div>
+
+</main>
+</div>
+    
+</body>
+</html>

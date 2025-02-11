@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+    <!-- Sophomore Spring Semester Web Programming Project -->
+    <meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+    <title>轉學相關-註冊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="checkRedirect.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            /* Every time the window is scrolled ... */
+            $(window).scroll( function(){
+                /* Check the location of each desired element */
+                $('.hideme').each( function(i){
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    /* If the object is completely visible in the window, fade it in */
+                    if( bottom_of_window > bottom_of_object ){
+                        $(this).animate({'opacity':'1'},500);
+                    }
+                }); 
+            });
+        });
+    </script>
+    
+    <style>
+        
+        /* CSS 樣式 */
+        
+        #container div { 
+            margin:50px; 
+            padding:50px; 
+            background-color:#f6e8e8; 
+            border-radius: 50px; 
+            border: 1px solid black; 
+        }
+
+        .hideme {
+            opacity:0;
+        }
+
+        .credit-info-title
+        {
+            color:#722a1d;
+            font-weight:bold;
+            margin-top: 10px;
+        }
+
+       
+
+        
+    </style>
+</head>
+<body>
+<!--navbar start-->
+   <div id="nav"></div>
+   <script>
+   $(document).ready(function(){
+     $("#nav").load("navbar.html", function(){
+         // Code executed after content is loaded
+         checkRedirect(); // Refer to checkRedirect.js
+     });
+     $('#triggerLoginPopup').click(function(){
+         $('#loginPopup').modal('toggle');
+         $('#loginErrorMsg').html(' ');
+     });});
+   </script>
+<!--the end of navbar-->
+<div class = "container">
+	<br>
+    <h2 align="center">112 學年度學士班新生註冊通知</h2>
+
+    <main id="container">
+        <div class="row credit-info-container">
+            <h4 class="credit-info-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#722a1d" class="bi bi-mortarboard icon" viewBox="0 0 16 16">
+                    <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+                    <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+                </svg>
+                學籍資料登錄
+            </h4>
+            &emsp;登錄時間：8 月 17 日(四)起。
+            <details>
+                <summary>查詢學號</summary>
+                &emsp;&emsp;註明於郵寄通知單外，本地生亦可於 8 月 17 日起至「新生學號查詢系統」查詢，境外生請向國際事務處洽詢，轉學生請於8/24(四)起上網查詢。
+            </details>
+            <details>
+                 <summary>啟動 E-MAIL 帳號</summary>
+                &emsp;&emsp;單位：電算中心<br>
+                &emsp;&emsp;電話：03-4227151#57555、57566<br>
+                &emsp;&emsp;網址：https://www.cc.ncu.edu.tw/page/account_freshman<br>
+                &emsp;&emsp;新生帳號啟動介面，啟動您的 E-MAIL 帳號(學號)，及設定您的密碼。這組帳號密碼敬請牢記，它提供您在學校的電子郵件信箱、個人網頁空間及其他服務(例如學生宿舍網路申請、學期選課、查詢學期成績、使用計中的電腦、印表機…等)。完成後請稍待 5 分鐘(系統處理時間)，再以自設密碼進行登錄。本校電子郵件信箱，將不定期收到與學校動態相關之重要公告，例如：註冊繳費…，請務必收信使用。
+            </details>
+            <details>
+                 <summary>登錄網址</summary>
+                &emsp;&emsp;由本校首頁 Portal 入口進入→便捷窗口→服務櫃台(iNCU)→教務專區→學籍/註冊→[學籍登錄]。
+            </details>
+            <details>
+                 <summary>登錄方式</summary>
+                &emsp;&emsp;以學號及自設密碼登錄。欄位前打＊者為必填欄位，並應勾選英文姓名之確認同意欄，並按下「以上資料確認無誤」鍵，方可視為完成。
+            </details>
+            <details>
+                 <summary> 英文姓名填寫說明</summary>
+                &emsp;&emsp;1. 請務必確認學籍資料個人英文姓名，以利日後教務處製發英文學位證書。<br>
+                &emsp;&emsp;2. 英文姓名需與護照之姓名相同，如無護照者，可至外交部網站查詢。<br>
+            </details>
+        </div>
+        <div class="row credit-info-container">
+            <h4 class="credit-info-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#722a1d" class="bi bi-laptop" viewBox="0 0 16 16">
+                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+            </svg>
+            選課
+        </h4>
+            &emsp;需要有導師密碼卡才可於 9/6~9/20 期間
+                 登入選課系統，若有疑問請聯絡系辧。<br>
+            &emsp;單位：課務組<br>
+             &emsp;電話：03-4227151#57166、57171<br>
+             &emsp;網址：https://www.cc.ncu.edu.tw/page/account_freshman<br>
+             &emsp;1. 9 月 6 日~9 月 20 日登入選課系統進行選課。(選課期間系統定於每日早上 7:00~9:00 做資料備份。)<br>
+             &emsp;2. 9 月 22 日~9 月 26 日人工加退選。
+             <details>
+                 <summary>轉學生選課重要資訊</summary>
+                 &emsp;&emsp;請務必於「報到後~9/1 期間」掃描(或照相) Email 至
+                 系辦信箱(主旨寫轉學生輔導選課:學號+姓名)。系辦收到信件後依同學需要請導
+                 師提供選課諮詢並回傳「導師密碼卡」。mi@cc.ncu.edu.tw 諮商中心徐小姐。<br>
+                 <a href="https://drive.google.com/uc?export=download&id=10zzb5XvgsmzlUn7l3rqEQGNfJry0rXTs" download="text.pdf" style="color: black; font-size: 16px;">導師輔導選課確認單(轉學生)</a>
+             </details>
+        </div>
+        <div class="row credit-info-container hideme">
+            <h4 id="info1" class="credit-info-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#722a1d" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+                  </svg>
+                繳費
+            </h4>
+            &emsp;單位：出納組<br>
+            &emsp;電話：03-4227151#57346<br>
+            &emsp;1. 學雜費繳費單可於 8 月 31 日起逕至本校首頁 Portal 入口下載繳費
+            單，或第一銀行第 e 學雜費入口網下載<br>
+            &emsp;2. 繳費手續請在9月10日(含)前以提款機轉帳、信用卡、超商繳費或
+            於9月8前第一銀行國內各分行臨櫃繳費。
+        </div>
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="#722a1d" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                    <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/>
+                  </svg>
+            兵役資料登錄(本國籍男生必填)
+        </h4>
+            &emsp;填寫期限：9 月 8 日前<br>
+            &emsp;單位：生活輔導組<br>
+            &emsp;電話：03-4227151#57223<br>
+            <details>
+                <summary>線上登錄</summary>
+                &emsp;&emsp;請至本校 portal 入口之「便捷窗口→服務櫃台
+                (iNCU)→教務專區→學籍/註冊→學籍登錄→兵役資料登錄」
+                填寫兵役資料並上傳證明文件。<br>
+                &emsp;&emsp;※未登錄兵役資料，致影響在學緩徵或儘召申辦之兵役權益者，後果請自行負責。
+            </details>
+        </div>
+        <div class="row credit-info-container hideme">
+            <h4 class="credit-info-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#722a1d" class="bi bi-hospital" viewBox="0 0 16 16">
+                    <path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1zM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25z"/>
+                    <path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1zm2 14h2v-3H7zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zm0-14H6v1h4zm2 7v7h3V8zm-8 7V8H1v7z"/>
+                  </svg>
+            健康檢查
+        </h4>
+            &emsp;健檢期限：9 月 7 日<br>
+            &emsp;單位：衛生保健組<br>
+            &emsp;電話：03-4227151#57271<br>
+            &emsp;於依仁堂舉行，屆時將由各系輔導員依排程，帶領新生至指定地點進行檢查
+            ，檢查注意事項及排程請至新生知訊網-新生必讀專區查詢。 
+        </div>
+        <div class="row credit-info-container hideme">
+    <h4 class="credit-info-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#722a1d" class="bi bi-card-list" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+          </svg>
+        新生大一英文修課規定
+    </h4>
+    &emsp;測驗期限：9 月 5 日 ~ 6 日<br>
+    &emsp;單位：語言中心<br>
+    &emsp;電話：03-4227151#33816<br>
+    &emsp;本校大一英文依新生入學學測或指考英文成績分級上課。
+     
+</div>
+</div>
+    </main>
+</body>
+</html>

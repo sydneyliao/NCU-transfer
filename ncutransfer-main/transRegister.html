@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+    <!-- Sophomore Spring Semester Web Programming Project -->
+    <meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+    <title>轉學相關-報到注意事項</title>
+    <!-- Additional libraries and frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- External files created by the author -->
+	<script src="checkRedirect.js"></script>
+
+    
+    <style>
+        main
+        {
+            background-color:white;
+        }
+        .transfer-header
+        {
+            height:55px;
+            padding-left:20px;
+            padding-top:10px;
+            background-color:#dbcccc;
+        }
+        .transfer-header-link, .transfer-header-link:hover, .transfer-header-link:focus, .transfer-header-link:active
+        {
+            color:black;
+        }
+        .transfer-title
+        {
+            margin:40px 0px 20px 0px;
+        }
+        .transfer-row
+        {
+            margin:30px 0px 60px 0px;
+        }
+        .credit-btn, .credit-btn:hover, .credit-btn:focus, .credit-btn:active
+        {
+            position:relative;
+            background-color:#f6e8e8;
+            width:30%;
+            margin:10px 0px 20px 0px;
+            padding:10px;
+            font-size:28px;
+            color:black;
+        }
+        .credit-info-container
+        {
+            margin:20px 0px 30px 100px;
+        }
+        .credit-info-title
+        {
+            color:#722a1d;
+            font-weight:bold;
+        }
+        .table
+        {
+            width:80%;
+        }
+        .table>thead>tr>th
+        {
+            background-color:#f6e8e8;
+        }
+        .table>tbody>tr>td
+        {
+            background-color:#dbcccc;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+/*         ul, ol, li
+        {
+            margin-bottom:2px;
+            font-size:larger;
+        } */
+        caption
+        {
+            caption-side:bottom;
+            margin-left:10px;
+        }
+        .credit-link, .credit-link:hover, .credit-link:focus, .credit-link:active
+        {
+            color:black;
+        }
+        .top-arrow-btn-container
+        {
+            position:fixed;
+            background-color:#722a1d;
+            padding:15px 15px 15px 15px;
+            border-radius:40px;
+            top:530px;
+            right:80px;
+        }
+        .top-arrow-btn, .top-arrow-btn:hover, .top-arrow-btn:focus, .top-arrow-btn:active
+        {
+            background-color:#722a1d;
+        }
+        i
+        {
+            color:white;
+        }
+        
+    </style>
+    <script>
+        jQuery(function($) {
+        $('a[href$=".pdf"]').attr("download","");
+        });
+    </script>
+</head>
+<body>
+  <!--navbar start-->
+   <div id="nav"></div>
+   <script>
+   $(document).ready(function(){
+     $("#nav").load("navbar.html", function(){
+         // Code executed after content is loaded
+         checkRedirect(); // Refer to checkRedirect.js
+     });
+     $('#triggerLoginPopup').click(function(){
+         $('#loginPopup').modal('toggle');
+         $('#loginErrorMsg').html(' ');
+     });});
+   </script>
+<!--the end of navbar-->
+<main>
+    <div class="container">
+	    <br>
+    <h2 align="center">轉學生報到程序說明</h2><br>
+
+            <h3 id="info1" class="credit-info-title">正取收件時間</h3>
+            &emsp;112 年 8 月 22 日(週二)下午 24 時止。一律 Email 報到。
+            <h3 id="info1" class="credit-info-title"><br>報到應檢附文件</h3>
+            <details>
+                <summary>新生報到表</summary>
+                自 8 月 17 日上午 9 時起，至本校招生系統網站(https://cis.ncu.edu.tw/ExamRegister/→點選「台灣聯合大學系統 112 學年度學士班轉學生招生-新生報到」→點選「登入」後，輸入帳號(身分證統一編號)、密碼(您
+的准考證號碼)→點選「錄取報到」功能，進行確認報到資料。)完成登錄列印出 A4報到表確認簽名，並黏貼身分證正反面影本。
+            </details>
+            <details>
+                <summary>畢業(學位)證書或轉學修業證明書</summary>
+                ※尚無法取得轉學修業證明書者，請先填寫切結書(如附件一)。
+            </details>
+            <details>
+                <summary>畢業(學位)證書或轉學修業證明書未附成績單者，應另檢附歷年成績單。</summary>
+            </details>
+            <details>
+                <summary> 以特種生身份報考之考生另檢附相關證明(退伍令、運動競賽之成績證明)。</summary>
+            </details>
+            <details>
+                <summary> 轉學生報到程序單</summary>
+            </details>
+            <br>
+        
+        <table class="table table-striped table-response-lg col-6 mx-auto text-center">
+               
+            <thead>
+                <tr>
+                    <th>錄取系所</th>
+                    <th class="text-center">EMAIL 信箱</th>
+                    <th class="text-center">承辦人分機</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>中國文學系<br>英美語文學<br>法國語文學系<br>客家語文暨社會科學學系</td>
+                    <td class="text-center">chienhui@ncu.edu.tw</td>
+                    <td class="text-center">57124 孫小姐</td>
+                </tr>
+                <tr>
+                    <td>經濟學系</td>
+                    <td class="text-center">jojo7043@ncu.edu.tw</td>
+                    <td class="text-center">57116 吳小姐</td>
+                </tr>
+                <tr>
+                    <td>機械工程學系</td>
+                    <td class="text-center">leecm@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57118 李先生</td>
+                </tr>
+                <tr>
+                    <td>土木工程學系<br>化學工程與材料工程學系</td>
+                    <td class="text-center">doreen@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57117 羅小姐</td>
+                </tr>
+                <tr>
+                    <td>資訊管理學系<br>財務金融學系</td>
+                    <td class="text-center">iling@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57115 馮小姐</td>
+                </tr>
+                <tr>
+                    <td>電機工程學系<br>通訊工程學系</td>
+                    <td class="text-center">hsiang@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57122 蘇小姐</td>
+                </tr>
+                <tr>
+                    <td>大氣科學系<br>地球科學學系<br>地球科學學院學士班<br>太空科學與工程學系</td>
+                    <td class="text-center">shebby@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57125 陳小姐</td>
+                </tr>
+                <tr>
+                    <td>數學系<br>光電與工程學系<br>生命科學系<br>生醫科學與工程學系</td>
+                    <td class="text-center">ally0620@ccc.ncu.edu.tw</td>
+                    <td class="text-center">57123 徐小姐</td>
+                </tr>
+            </tbody>
+            <caption>※請將上列報到文件，掃描(或照相)後 Email 至錄取系所承辦人員信箱。<br>
+            Email 主旨請註明：112 學年度轉學生報到-○○○(新生姓名)
+            學號及學士班新生註冊通知，將於報到完成後以 Email 回覆通知。</caption>
+        </table>
+            <h3 id="info2" class="credit-info-title">注意事項</h3>
+            &emsp;1. 本報到程序說明同時公告於註冊組網頁。<br>
+            &emsp;2. 考生如具特殊身分(如原住民)得申請學雜費減免，請逕向本校學務處生輔組申請。<br>
+            &emsp;3. 請詳閱 112 學年度第1學期學士班新生註冊通知<br>
+        <br>
+            <h3 id="info4" class="credit-info-title">相關辦法暨表單</h3>
+        
+        <ul>
+            <li>
+                 <a href="https://drive.google.com/uc?export=download&id=1oLcHWGDkLaor4kN1He-WO-40mB1RpJnA" download="text.pdf" style="color: black;">112學年度轉學生報到程序單  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg>   </a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/uc?export=download&id=19tdxWNX4GKdbjW3DIaMKdfTrzJY2bUDf" download="text.pdf" style="color: black;">切結書  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg>  </a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/uc?export=download&id=1S65FsT-Ndk1cWb7VlJgFfN7K3NI2IfFh" download="text.pdf" style="color: black;">各系辦公室轉學生諮詢窗口  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg> </a>
+            </li>
+        </ul>
+            
+       </div> 
+    </main>
+</body>
+</html>

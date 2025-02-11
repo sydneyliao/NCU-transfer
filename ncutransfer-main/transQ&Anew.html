@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE HTML>
+<html lang="zh-tw">
+<head>
+    <!-- Sophomore Spring Semester Web Programming Project -->
+    <meta charset="utf-8">
+    <meta name="author" content="網程設第3組">
+    <title>轉學相關-常見問題</title>
+    <!-- Additional libraries and frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- External files created by the author -->
+    <script src="checkRedirect.js"></script>
+    
+    <style>
+        main
+        {
+            background-color:white;
+            margin: 0 200px; /* 左右邊距為200像素 */
+        }
+        .transfer-header
+        {
+            height:55px;
+            padding-left:20px;
+            padding-top:10px;
+            background-color:#dbcccc;
+        }
+        .transfer-header-link, .transfer-header-link:hover, .transfer-header-link:focus, .transfer-header-link:active
+        {
+            color:black;
+        }
+        .transfer-title
+        {
+            margin:40px 0px 20px 0px;
+        }
+        .transfer-row
+        {
+            margin:30px 0px 60px 0px;
+        }
+        .credit-btn, .credit-btn:hover, .credit-btn:focus, .credit-btn:active
+        {
+            position:relative;
+            background-color:#f6e8e8; /* 修改此處的顏色 */
+            width:30%;
+            margin:10px 0px 20px 0px;
+            padding:10px;
+            font-size:28px;
+            color:black;
+        }
+        .accordion-button {
+            font-size: 20px; /* 修改此處的字體大小 */
+            background-color:#f6e8e8;
+        }
+        .accordion-button:hover {
+            background-color: #f0f0f0; /* 當滑鼠懸停時變為白色 */
+        }
+        .accordion-body {
+            font-size: 18px; /* 修改此處的字體大小 */
+            background-color:white;
+        }
+        .credit-info-container
+        {
+            margin:20px 0px 30px 100px;
+        }
+        .credit-info-title
+        {
+            color:#722a1d;
+            font-weight:bold;
+        }
+        .table
+        {
+            width:80%;
+        }
+        .table>thead>tr>th
+        {
+            background-color:#f6e8e8; /* 修改此處的顏色 */
+        }
+        .table>tbody>tr>td
+        {
+            background-color:#dbcccc;
+        }
+        
+        caption
+        {
+            caption-side:bottom;
+            margin-left:10px;
+        }
+        .credit-link, .credit-link:hover, .credit-link:focus, .credit-link:active
+        {
+            color:black;
+        }
+        .top-arrow-btn-container
+        {
+            position:fixed;
+            background-color:#722a1d;
+            padding:15px 15px 15px 15px;
+            border-radius:40px;
+            top:530px;
+            right:80px;
+        }
+        .top-arrow-btn, .top-arrow-btn:hover, .top-arrow-btn:focus, .top-arrow-btn:active
+        {
+            background-color:#722a1d;
+        }
+        i
+        {
+            color:white;
+        }
+    </style>
+    
+</head>
+<body>
+<!--navbar start-->
+   <div id="nav"></div>
+   <script>
+   $(document).ready(function(){
+     $("#nav").load("navbar.html", function(){
+         // Code executed after content is loaded
+         checkRedirect(); // Refer to checkRedirect.js
+     });
+     $('#triggerLoginPopup').click(function(){
+         $('#loginPopup').modal('toggle');
+         $('#loginErrorMsg').html(' ');
+     });});
+   </script>
+<!--the end of navbar-->
+    
+        <div class = "container">
+            <br>
+    <h2 align="center">常見問題</h2><br>
+
+    <main>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    轉學生會用到導師密碼卡嗎?
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">需要，請務必於「報到後~9/1 期間」掃描(或照相) Email 至 系辦信箱(主旨寫轉學生輔導選課:學號+姓名)。系辦收到信件後依同學需要請導 師提供選課諮詢並回傳「導師密碼卡」。</div>
+            </div>
+        </div><br>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    大二必修與大一必修衝堂該如何抉擇?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">建議選擇修讀大二必修，因為有優先序。選擇衝堂的課程時，要根據自己的情況做出最適合的選擇，考慮到課程內容、個人興趣和學業計畫。</div>
+            </div>
+        </div><br>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    如何知道有成功抵免學分?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">請參考中央大學畢業審核系統。</div>
+            </div>
+        </div><br>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    轉學生需要新生健檢嗎?
+                </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">可以拿原學校的健康假查報到抵免中央大學新生健檢。</div>
+            </div>
+        </div><br>
+    </div>
+</div>
+</main>
+</body>
+</html>

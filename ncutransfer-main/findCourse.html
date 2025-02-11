@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="網程設第3組">
+	<title>中大轉系轉學知訊網</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--import bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="checkRedirect.js"></script>
+</head>
+  <body>
+      <!--navbar start-->
+      <div id="nav"></div>
+      <script>
+      $(document).ready(function(){
+        $("#nav").load("navbar.html", function(){
+            // Code executed after content is loaded
+            checkRedirect(); // Refer to checkRedirect.js
+        });
+        $('#triggerLoginPopup').click(function(){
+            $('#loginPopup').modal('toggle');
+            $('#loginErrorMsg').html(' ');
+        });});
+      </script>
+      <!--the end of navbar-->
+    <div class="container">
+        <!--select form-->
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="mt-5">選擇轉系後的系所</h3>
+                <select class="form-select" id="departmentSelect" onchange="sendSelectedDepartment()" required>
+                    <option disabled selected>選擇系所</option>
+                    <optgroup label="文學院">
+                        <option value="文學院學士班">文學院學士班</option>
+                        <option value="中國文學系">中國文學系</option>
+                        <option value="英美語文學系">英美語文學系</option>
+                        <option value="法國語文學系">法國語文學系</option>
+                    </optgroup>
+                    <optgroup label="理學院">
+                        <option value="理學院學士班">理學院學士班</option>
+                        <option value="化學學系">化學學系</option>
+                        <option value="物理學系">物理學系</option>
+                        <option value="數學系">數學系</option>
+                        <option value="光電科學與工程學系">光電科學與工程學系</option>
+                    </optgroup>
+                    <optgroup label="管理學院">
+                        <option value="經濟學系">經濟學系</option>
+                        <option value="企業管理學系">企業管理學系</option>
+                        <option value="財務金融學系">財務金融學系</option>
+                        <option value="資訊管理學系">資訊管理學系</option>
+                    </optgroup>
+                    <optgroup label="地球科學學院">
+                        <option value="地科院學士班">地科院學士班</option>
+                        <option value="地球科學系">地球科學系</option>
+                        <option value="太空科學與工程學系">太空科學與工程學系</option>
+                        <option value="大氣科學系">大氣科學系</option>
+                    </optgroup>
+                    <optgroup label="客家學院">
+                        <option value="客家語文暨社會科學學系">客家語文暨社會科學學系</option>
+                    </optgroup>
+                    <optgroup label="資訊電機學院">
+                        <option value="資訊電機學院學士班">資訊電機學院學士班</option>
+                        <option value="電機工程學系">電機工程學系</option>
+                        <option value="資訊工程學系">資訊工程學系</option>
+                        <option value="通訊工程學系">通訊工程學系</option>
+                    </optgroup>
+                    <optgroup label="生醫理工學院">
+                        <option value="生命科學系">生命科學系</option>
+                        <option value="生醫科學與工程學系">生醫科學與工程學系</option>
+                    </optgroup>
+                    <optgroup label="工學院">
+                        <option value="工學院學士班">工學院學士班</option>
+                        <option value="土木工程學系">土木工程學系</option>
+                        <option value="化學工程與材料工程學系">化學工程與材料工程學系</option>
+                        <option value="機械工程學系">機械工程學系</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mt-5">選擇轉系後的年級</h3>
+                <select class="form-select" id="gradeSelect">
+                    <option value="2">大二</option>
+                    <option value="3">大三</option>
+                    <option value="4">大四</option>
+                </select>
+                <small class="text-black-50">*本年級資料只用於AI產生請求密碼卡的信件內容使用</small>
+            </div>
+        </div>
+    
+            
+        <hr class="border-4 text-brown2">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>必選修</th>
+                    <th>課程名稱</th>
+                    <th>授課教授</th>
+                    <th>學分數</th>
+                    <th>上課時段</th>
+                    <th>密碼卡信</th>
+                </tr>
+            </thead>
+            <tbody class="align-middle" id="courseTable">
+                <tr>
+                    <td colspan="6">無資料(請先選擇科系)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Modal -->
+        <div class="modal" id="contentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title-1">密碼卡信件草稿</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="ai-content">
+                    <!--AI generated content-->
+                </div>
+                <div class="modal-footer">
+                <button id='copyBtn' type="button" class="btn bg-hover-primary3 btn-primary3 disabled" onclick="copy('content')">複製</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
