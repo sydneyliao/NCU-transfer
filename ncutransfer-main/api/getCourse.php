@@ -19,7 +19,6 @@ function find_department_id($departments, $department_name) {
     return null;
 }
 
-// 以下程式碼部分是由AI生成
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 獲取請求的原始內容（JSON 資料）
     $json_data = file_get_contents('php://input');
@@ -74,3 +73,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 }
+
