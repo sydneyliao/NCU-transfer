@@ -1,7 +1,7 @@
 <?php
 function get_mail($department, $grade, $prof_name, $course){
 
-$API_KEY = 'AIzaSyCbEml5W5ippVg0V-5LIz9iPJRPR76IgNg';
+$API_KEY = 'your_api_key';
 
 // AI 需要的資料
 $data = json_encode(array(
